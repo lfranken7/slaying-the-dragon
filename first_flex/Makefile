@@ -2,8 +2,6 @@
 FLEX := flex
 CC := gcc
 
-
-
 all: lex.yy.c counter 
 
 

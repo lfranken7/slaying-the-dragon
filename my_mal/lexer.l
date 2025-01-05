@@ -19,17 +19,24 @@ ws [ \t\n\r]
 ")"	{ return RPAREN; }
 
 
-{digit}+	{ yylval.num = atoi(yytext); 
+{digit}+	{ //yylval.num = atoi(yytext); 
 		  return NUMBER; } 
 
 {ws}+		/* do nothing with ws */
 
-";;.*"		/* this is a comment */
+";;.*"		/* this is a comment remove the line */
 
-"."		{ return -1; }
+"."		{ 	printf("Unrecognized Lexeme: %s", yytext);
+			return -1; }
 
 
 %%
+int yywrap()
+{
+	// TODO: make this more complicated I think.
+	return 1;
+}
+
 
 int main()
 {
