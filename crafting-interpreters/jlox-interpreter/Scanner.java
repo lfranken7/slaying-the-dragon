@@ -1,4 +1,4 @@
-package com.craftinginterpreters.lox;
+package com.dragon.lox;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,7 +9,7 @@ import java.util.Map;
 
 // TODO: undo the static importing, it makes it unclear if
 // methods/classes are defined here or elsewhere
-import static com.craftinginterpreters.lox.TokenType.*; 
+import static com.dragon.lox.TokenType.*; 
 
 class Scanner {
   private final String source;
@@ -95,7 +95,7 @@ class Scanner {
         break;
       case '>':
         addToken(match('=') ? GREATER_EQUAL : GREATER);
-        broeak;
+        break;
       // Comments and division is done with slash
       case '/':
         if (match('/')) {
@@ -105,6 +105,17 @@ class Scanner {
           addToken(SLASH);
         }
         break;
+
+      case ' ':
+      case '\r':
+      case '\t':
+        // Ignore whitespace.
+        break;
+
+      case '\n':
+        line++;
+        break;
+
       default:
         if (isDigit(c)) {
           number(); 

@@ -2,17 +2,15 @@
 CC := javac
 JRE := java
 
-targets := Lox.java
-outputs := Lox.class
+outputs := TokenType.class Token.class Scanner.class Lox.class
 
-all: $(outputs)
-
-Lox.class: Lox.java 
-	$(CC) $^
+all:
+	$(CC) -d . *.java
+  
 
 .PHONY: run
-run: Lox.class
-	$(JRE) Lox 
+run: 
+	$(JRE) com.dragon.lox.Lox 
 
 clean:
-	rm $(outputs) 
+	rm -rf com 
