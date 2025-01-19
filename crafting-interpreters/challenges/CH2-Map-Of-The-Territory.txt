@@ -1,0 +1,10 @@
+Question 1:
+    Pick an open source implementation of a language you like. Download the source code and poke around in it. Try to find the code that implements the scanner and parser. Are they handwritten, or generated using tools like Lex and Yacc? (.l or .y files usually imply the latter.)
+  - Did with C they use yacc and lex for a while, switched to handrolled recursive descent parsers now in clang and GCC.
+Question 2:
+    Just-in-time compilation tends to be the fastest way to implement dynamically typed languages, but not all of them use it. What reasons are there to not JIT?
+  - Difficulty seems to be a factor for many small languages that the performance isn't necessary for.
+
+Question 3:
+    Most Lisp implementations that compile to C also contain an interpreter that lets them execute Lisp code on the fly as well. Why?
+  - Compiling to C makes a lot of sense for speed but prevents you from using several features that are sought after by AI research. 

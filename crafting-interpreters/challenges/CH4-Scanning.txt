@@ -1,0 +1,16 @@
+
+Question 1:
+    The lexical grammars of Python and Haskell are not regular. What does that mean, and why aren’t they?
+  - This question is kinda ambiguous as both Haskell and Python don't use a lexer and parser that are separated. Most programming langagues are not regular, but use regular expressions to find tokens. I am unaware of any lexemes that require a PDA. 
+
+Question 2:
+    Aside from separating tokens—distinguishing print foo from printfoo—spaces aren’t used for much in most languages. However, in a couple of dark corners, a space does affect how code is parsed in CoffeeScript, Ruby, and the C preprocessor. Where and what effect does it have in each of those languages?
+  - TODO: Learn CoffeeScript and Ruby and then come back lol. But the C Preprocessor uses macros to do textual replacement. There are string contatenation operators such as '##' That i think is effected by this.
+
+Question 3:
+    Our scanner here, like most, discards comments and whitespace since those aren’t needed by the parser. Why might you want to write a scanner that does not discard those? What would it be useful for?
+  - You might be able to mark comments as relevant for debugging areas in source files. A scanner might also require whitespace as a control flow mechanism such as in Haskell and Python.
+
+Question 4:
+    Add support to Lox’s scanner for C-style /* ... */ block comments. Make sure to handle newlines in them. Consider allowing them to nest. Is adding support for nesting more work than you expected? Why?
+  - TODO: add Multiline C-Style comments using /* ... */
