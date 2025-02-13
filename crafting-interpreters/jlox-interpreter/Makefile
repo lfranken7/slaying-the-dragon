@@ -12,5 +12,8 @@ all:
 run: 
 	$(JRE) com.dragon.lox.Lox 
 
+testprint:
+	$(JRE) com.dragon.lox.AstPrinter 
+
 clean:
 	rm -rf com 
